@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+//Variables
+$headerHeight: 60px;
+$firstColor: #4285F4;
+$secondColor: #EA4335;
+$thirdColor: #FBBC05;
+$fourColor: #34A853;
+$firstFont: 'Contrail One', cursive;
+$secondFont: 'Crimson Text', serif;
+$thirdFont:  'Concert One', cursive;
+//Reset general
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+//Diseño del header
+header{
+    width: 100%;
+    height: $headerHeight;
+    background: $firstColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    z-index: 50;
+    .header-right, .header-left{
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    //Responsive para desktop
+    .header-left{
+        @media (min-width: 1280px) and (max-width: 2000px){
+            display: none;
+        }
+    }
+    h2{
+        font-size: 1.5em;
+        color: #fff;
+        font-family: $firstFont;
+        //Responsive para movil
+        @media (min-width: 315px) and (max-width: 480px){
+            font-size: 1em;
+        }
+    }
+    .header-right{
+        //background: red;
+        .icon-menu{
+            cursor: pointer;
+            transform-origin: top center;
+            
+            display: block;
+            &:hover{
+                animation: menuIconAnimation .5s 1;
+            }
+            @keyframes menuIconAnimation{
+                50%{
+                    transform: rotateX(45deg);
+                }
+                90%{
+                    transform: rotateX(5deg);
+                }
+            }
+        }
+        //Responsive para desktop
+        //En las medidas para escritorio eliminanos el icono del menu
+        //Ya que el menu se encontrara directamente en el header
+        @media (min-width: 1280px) and (max-width: 2000px){
+            .icon-menu{
+                display: none;
+            }
+        }
+
+        .menu{
+            position: absolute;
+            right: 0;
+            top: $headerHeight;
+            width: 50vw;
+            transform: translateX(50vw);
+            transition: transform .5s;
+            //Responsive para desktop
+            @media (min-width: 1280px) and (max-width: 2000px){
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translateX(0);
+                display: block;
+                display: flex;
+                justify-content: flex-end;
+                //background: red;
+                width: 56vw;
+            }
+
+            //Responsive para movil
+            @media (min-width: 315px) and (max-width: 480px){
+                width: 60vw;
+                transform: translateX(60vw);
+                .animate &{
+                    transform: translateX(0);
+                }
+                
+            }
+
+            .animate &{
+                transform: translateX(0);
+            }
+            li{
+                background: rgba(234, 67, 53,.8);
+                list-style: none;
+                height: 8vh;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0 10px;
+                //Responsive para desktop
+                @media (min-width: 1280px) and (max-width: 2000px){
+                    background: none;
+                    height: auto;
+                    span{
+                        display: none;
+                    }
+
+                    &:hover a{
+                        color: rgba(#fff,.8);
+                    }
+                }
+
+                //Responsive para movil
+                @media (min-width: 315px) and (max-width: 480px){
+                    font-size: 0.9em;
+                }
+                a{
+                    margin-left: 10px;
+                    text-decoration: none;
+                    font-family: $secondFont;
+                    font-size: 0.9em;
+                    color: #fff;
+                    transition: color .3s;
+                }
+
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 3px;
+                    background: #fff;
+                    width: 100%;
+                    transform: scale(0,1);
+                    transform-origin: center left;
+                    transition: transform .5s;
+                }
+
+                &:hover::after{
+                    transform: scale(1,1);
+                }
+
+                &:hover span{
+                    animation: iconsMove 1s 1;
+                    transform-origin: top center;
+                }
+
+                @keyframes iconsMove{
+                    20%{
+                        transform: rotate(20deg);
+                    }
+                    40%{
+                        transform: rotate(-15deg);
+                    }
+                    60%{
+                        transform: rotate(10deg);
+                    }
+                    80%{
+                        transform: rotate(-5deg);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+article{
+    width: 100%;
+    position: relative;
+    top: $headerHeight;
+    
+   
+    .banner{
+        width: 100%;
+        height: 400px;
+        background-image: url("../IMG/1.jpg");
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        //Responsive para desktop
+        @media (min-width: 1280px) and (max-width: 2000px){
+           height: 500px;
+           background-position: center;
+        }
+
+        //Responsive para movil
+        @media (min-width: 315px) and (max-width: 480px){
+            background-position: center;
+        }
+        .banner-top{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 2em;
+            font-family: $firstFont;
+            background: rgba($firstColor,.2);
+
+            .firts-name{
+                transition: color .5s;
+            }
+
+            &:hover .firts-name{
+                color: rgba($thirdColor,.8);
+            }
+
+            .icon-wear{
+                transition: color .5s;
+            }
+        
+            &:hover .icon-wear{
+                animation: icon-wear .5s 1;
+                transform-origin: top center;
+                color: rgba($thirdColor,0.8);
+                @keyframes icon-wear{
+                    20%{
+                        transform: rotate(20deg);
+                    }
+
+                    40%{
+                        transform: rotate(-15deg)
+                    }
+
+                    60%{
+                        transform: rotate(10deg);
+                    }
+
+                    80%{
+                        transform: rotate(-5deg);
+                        
+                    }
+                }
+            }
+        }
+
+        .banner-bottom{
+            width: 100%;
+            //(justify-self: flex-start;
+            background: rgba($firstColor,.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            color: #fff;
+            font-family: $secondFont;
+            font-size: 1.2em;
+            p{
+                background: rgba($fourColor,0.5);
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .ropaHombresPrincipal{
+        width: 100%;
+        //height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .content{
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            h3{
+                width: 100%;
+                background: $thirdColor;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $firstFont;
+                color: #fff;
+                //position: relative;
+
+            }
+
+            .ropaHombresPrincipal-item{
+                width: 50%;
+                height: 300px;
+                background-image: url(../IMG/HOMBRES-ROPA/1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: background-position-y .5s;
+                overflow: hidden;
+                //Responsive para desktop
+                @media (min-width: 1280px) and (max-width: 2000px){
+                    width: 25%;
+                    height: 400px;
+                }
+
+                //Responsive para movil
+                @media (min-width: 315px) and (max-width: 480px){
+                    width: 100%;
+                }
+                .ropaHombresPrincipal-item-top{
+                    width: 100%;
+                    height: 30px;
+                    background: rgba($thirdColor,1);
+                    color: #fff;
+                    font-family: $thirdFont;
+                    text-shadow: 1px 1px 1px #111;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .ropaHombresPrincipal-item-bottom{
+                    width: 100%;
+                    height: 50px;
+                    background: rgba($thirdColor,.9);
+                    font-family: $secondFont;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    position: relative;
+                    top: 300px - 30px;
+                    transition: transform .7s;
+                    //Responsive para desktop
+                    @media (min-width: 1280px) and (max-width: 2000px){
+                        top: 400px - 30px;
+                    }                
+                }
+
+                &:hover{
+                    background-position-y: 30px;
+                }
+                &:hover .ropaHombresPrincipal-item-bottom{
+                    transform: translateY(-49px);
+                }
+                
+            }
+
+            .i2{
+                background-image: url(../IMG/HOMBRES-ROPA/2.jpg);
+            }
+
+            .i3{
+                background-image: url(../IMG/HOMBRES-ROPA/3.jpg);
+            }
+
+            .i4{
+                background-image: url(../IMG/HOMBRES-ROPA/4.jpg);
+            }
+
+            .i5{
+                background-image: url(../IMG/HOMBRES-ROPA/5.jpg);
+            }
+
+            .i6{
+                background-image: url(../IMG/HOMBRES-ROPA/6.jpg);
+            }
+
+            .i7{
+                background-image: url(../IMG/HOMBRES-ROPA/7.jpg);
+            }
+
+            .i8{
+                background-image: url(../IMG/HOMBRES-ROPA/8.jpg);
+                position: relative;
+            }
+
+
+            .irHombres{
+                width: 100%;
+                background: $thirdColor;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: $firstFont;
+                color: #fff;
+                overflow: hidden;
+                //position: relative;
+
+                cursor: pointer;
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                }
+                span{
+                    width: 100%;
+                    position: absolute;
+                    display: block;
+                    transform: translateX(-100%);
+                    font-size: 1.5em;
+                }
+
+                &:hover span{
+                    animation: moverFlecha 1.5s 1;
+                    @keyframes moverFlecha{
+                        to{
+                            transform: translateX(90%);
+                            color: $firstColor;
+                        }
+                        50%{
+                            color: $fourColor;
+                        }
+                    }
+                }
+
+            }
+        }
+        
+        //Hereda todo lo que contiene content OJO
+        .mujer-content{
+            margin-top: 20px;
+            h3{
+                background: $secondColor;
+            }
+            .ropaMujeresPrincipal-item{
+                width: 50%;
+                height: 300px;
+                
+                background-image: url(../IMG/MUJERES-ROPA/1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: background-position-y .5s;
+                overflow: hidden;
+                //Responsive para desktop
+                @media (min-width: 1280px) and (max-width: 2000px){
+                    width: 25%;
+                    height: 400px;
+                }
+                
+                //Responsive para movil
+                @media (min-width: 315px) and (max-width: 480px){
+                    width: 100%;
+                }
+                .ropaMujeresPrincipal-item-top{
+                    width: 100%;
+                    height: 30px;
+                    background: rgba($secondColor,1);
+                    color: #fff;
+                    font-family: $thirdFont;
+                    text-shadow: 1px 1px 1px #111;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .ropaMujeresPrincipal-item-bottom{
+                    width: 100%;
+                    height: 50px;
+                    background: rgba($secondColor,.9);
+                    font-family: $secondFont;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    position: relative;
+                    top: 300px - 30px;
+                    transition: transform .7s;
+                    //Responsive para desktop
+                    @media (min-width: 1280px) and (max-width: 2000px){
+                        top: 400px - 30px;
+                    }                       
+                }
+
+                &:hover{
+                    background-position-y: 30px;
+                }
+                &:hover .ropaMujeresPrincipal-item-bottom{
+                    transform: translateY(-49px);
+                }
+                
+            }
+            
+            .m2{
+                background-image: url(../IMG/MUJERES-ROPA/3.jpg);
+            }
+
+            .m3{
+                background-image: url(../IMG/MUJERES-ROPA/4.jpg);
+            }
+
+            .m4{
+                background-image: url(../IMG/MUJERES-ROPA/6.png);
+            }
+
+            .m5{
+                background-image: url(../IMG/MUJERES-ROPA/7.jpg);
+            }
+
+            .m6{
+                background-image: url(../IMG/MUJERES-ROPA/8.jpg);
+            }
+
+            .m7{
+                background-image: url(../IMG/MUJERES-ROPA/2.jpg);
+            }
+
+            .m8{
+                background-image: url(../IMG/MUJERES-ROPA/5.jpg);
+            }
+        }
+
+        .irMujeres{
+            width: 100%;
+            background: $secondColor;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $firstFont;
+            color: #fff;
+            //position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+            span{
+                width: 100%;
+                position: absolute;
+                display: block;
+                transform: translateX(-100%);
+                font-size: 1.5em;
+            }
+
+            &:hover span{
+                animation: moverFlecha 1.5s 1;
+                @keyframes moverFlecha{
+                    to{
+                        transform: translateX(90%);
+                        color: #fff;
+                    }
+                    50%{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .nuestrasMarcas{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        //background: red;
+        position: absolute;
+        .nuestrasMarcasContent{
+            width: 90%;
+
+            //Responsive para desktop
+            @media (min-width: 1280px) and (max-width: 2000px){
+                display: flex;
+                flex-wrap: wrap;
+                h2{
+                    width: 100%;
+                }
+            }              
+  
+            h2{
+                color: #fff;
+                text-align: center;
+                background: $firstColor;
+                font-family: $firstFont;
+                
+            }
+
+            .nuestrasMarcasItem{
+                background-image: url(../IMG/NUESTRAS-MARCAS/vans-1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 330px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                
+                transition: background-image .3s;
+                border-bottom: 10px solid $firstColor;
+                border-top: 10px solid $firstColor;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 20px;
+
+                //Responsive para desktop
+                @media (min-width: 1280px) and (max-width: 2000px){
+                    height: 400px;
+                    width: 50%;
+                }                   
+                .imgUp{
+                    width: 100%;
+                    height: 100%;
+                    background-image: url(../IMG/NUESTRAS-MARCAS/vans-2.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: absolute;
+                    //z-index: -10;
+                    top: 0;
+                    transform: translateX(100%);
+                    transition: transform .5s;
+                }
+
+                h3{
+                    background: rgba($firstColor,.8);
+                    width: 40%;
+                    height: 10%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                    transition: transform .3s;
+                    transform-origin: center right;
+                }
+
+               &:hover .imgUp{
+                   transform: translateX(0);
+               }
+
+                &:hover h3{
+                    transform: scale(1.1);
+                }
+
+
+                
+            }
+
+            .puma{
+                background-image: url(../IMG/NUESTRAS-MARCAS/puma-1.jpg);
+                .imgUp{
+                    background-image: url(../IMG/NUESTRAS-MARCAS/puma-2.jpg);
+                }
+            }
+            
+            .adidas{
+                background-image: url(../IMG/NUESTRAS-MARCAS/adidas-1.jpg);
+                .imgUp{
+                    background-image: url(../IMG/NUESTRAS-MARCAS/adidas-2.jpg);
+                }
+            }
+
+            .nike{
+                background-image: url(../IMG/NUESTRAS-MARCAS/nike-1.jpg);
+                .imgUp{
+                    background-image: url(../IMG/NUESTRAS-MARCAS/nike-2.jpg);
+                }
+            }
+        }
+    }
+
+    .footer{
+        width: 100%;
+        height: 200px;
+        background: $fourColor;
+        display: flex;
+        justify-content: center;
+        .footerContent{
+            width: 90%;
+            height: 100%;
+            //Responsive para desktop
+            .social{
+                @media (min-width: 315px) and (max-width: 480px){
+                    font-size: 0.8em;
+                }
+            }
+            .social{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                .socialMediaIcons{
+                    width: 50%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h3, .iconItem{
+                        color: #fff;
+                    }
+                    .iconItem{
+                        margin: 5px 0;
+                        span{
+                            margin: 0 10px;
+                            transition: color .3s;
+                            cursor: pointer;
+                            &:hover{
+                                color: #333;
+                            }
+                        }
+                    }
+                    
+                }
+
+                .direction{
+                    width: 50%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    color: #fff;
+                    p{
+                        margin: 10px 0;
+                    }
+
+                    &:hover span{
+                        animation: iconsMove 1s 1;
+                        @keyframes iconsMove{
+                            20%{
+                                transform: rotate(20deg);
+                            }
+                            40%{
+                                transform: rotate(-15deg);
+                            }
+                            60%{
+                                transform: rotate(10deg);
+                            }
+                            80%{
+                                transform: rotate(-5deg);
+                            }
+                        }
+                    }
+                }
+                
+            }
+    
+            .copy{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-size: 1.2em;
+                font-family: $firstFont;
+                .firts-name{
+                    transition: color .5s;
+                }
+    
+                &:hover .firts-name{
+                    color: rgba($thirdColor,.8);
+                }
+    
+                .icon-wear{
+                    transition: color .5s;
+                }
+                &:hover .icon-wear{
+                    animation: icon-wear .5s 1;
+                    transform-origin: top center;
+                    color: rgba($thirdColor,0.8);
+                    @keyframes icon-wear{
+                        20%{
+                            transform: rotate(20deg);
+                        }
+    
+                        40%{
+                            transform: rotate(-15deg)
+                        }
+    
+                        60%{
+                            transform: rotate(10deg);
+                        }
+    
+                        80%{
+                            transform: rotate(-5deg);
+                            
+                        }
+                    }
+                }                
+                
+
+
+            }
+        }
+    }
+    
+}
+

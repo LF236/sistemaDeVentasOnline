@@ -1,0 +1,1088 @@
+@import url("https://fonts.googleapis.com/css2?family=Contrail+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background: #4285F4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  z-index: 50;
+}
+
+header .header-right, header .header-left {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  header .header-left {
+    display: none;
+  }
+}
+
+header h2 {
+  font-size: 1.5em;
+  color: #fff;
+  font-family: "Contrail One", cursive;
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  header h2 {
+    font-size: 1em;
+  }
+}
+
+header .header-right .icon-menu {
+  cursor: pointer;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  display: block;
+}
+
+header .header-right .icon-menu:hover {
+  -webkit-animation: menuIconAnimation .5s 1;
+          animation: menuIconAnimation .5s 1;
+}
+
+@-webkit-keyframes menuIconAnimation {
+  50% {
+    -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+  }
+  90% {
+    -webkit-transform: rotateX(5deg);
+            transform: rotateX(5deg);
+  }
+}
+
+@keyframes menuIconAnimation {
+  50% {
+    -webkit-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+  }
+  90% {
+    -webkit-transform: rotateX(5deg);
+            transform: rotateX(5deg);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  header .header-right .icon-menu {
+    display: none;
+  }
+}
+
+header .header-right .menu {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 50vw;
+  -webkit-transform: translateX(50vw);
+          transform: translateX(50vw);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  header .header-right .menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 56vw;
+  }
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  header .header-right .menu {
+    width: 60vw;
+    -webkit-transform: translateX(60vw);
+            transform: translateX(60vw);
+  }
+  .animate header .header-right .menu {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.animate header .header-right .menu {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+header .header-right .menu li {
+  background: rgba(234, 67, 53, 0.8);
+  list-style: none;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  header .header-right .menu li {
+    background: none;
+    height: auto;
+  }
+  header .header-right .menu li span {
+    display: none;
+  }
+  header .header-right .menu li:hover a {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  header .header-right .menu li {
+    font-size: 0.9em;
+  }
+}
+
+header .header-right .menu li a {
+  margin-left: 10px;
+  text-decoration: none;
+  font-family: "Crimson Text", serif;
+  font-size: 0.9em;
+  color: #fff;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+header .header-right .menu li::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #fff;
+  width: 100%;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+header .header-right .menu li:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+header .header-right .menu li:hover span {
+  -webkit-animation: iconsMove 1s 1;
+          animation: iconsMove 1s 1;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+}
+
+@-webkit-keyframes iconsMove {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@keyframes iconsMove {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+article {
+  width: 100%;
+  position: relative;
+  top: 60px;
+}
+
+article .banner {
+  width: 100%;
+  height: 400px;
+  background-image: url("../IMG/1.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .banner {
+    height: 500px;
+    background-position: center;
+  }
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  article .banner {
+    background-position: center;
+  }
+}
+
+article .banner .banner-top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 2em;
+  font-family: "Contrail One", cursive;
+  background: rgba(66, 133, 244, 0.2);
+}
+
+article .banner .banner-top .firts-name {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+article .banner .banner-top:hover .firts-name {
+  color: rgba(251, 188, 5, 0.8);
+}
+
+article .banner .banner-top .icon-wear {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+article .banner .banner-top:hover .icon-wear {
+  -webkit-animation: icon-wear .5s 1;
+          animation: icon-wear .5s 1;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  color: rgba(251, 188, 5, 0.8);
+}
+
+@-webkit-keyframes icon-wear {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+@keyframes icon-wear {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+article .banner .banner-bottom {
+  width: 100%;
+  background: rgba(66, 133, 244, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #fff;
+  font-family: "Crimson Text", serif;
+  font-size: 1.2em;
+}
+
+article .banner .banner-bottom p {
+  background: rgba(52, 168, 83, 0.5);
+  width: 100%;
+  text-align: center;
+}
+
+article .ropaHombresPrincipal {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+article .ropaHombresPrincipal .content {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+article .ropaHombresPrincipal .content h3 {
+  width: 100%;
+  background: #FBBC05;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Contrail One", cursive;
+  color: #fff;
+}
+
+article .ropaHombresPrincipal .content .ropaHombresPrincipal-item {
+  width: 50%;
+  height: 300px;
+  background-image: url(../IMG/HOMBRES-ROPA/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: background-position-y .5s;
+  transition: background-position-y .5s;
+  overflow: hidden;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .ropaHombresPrincipal .content .ropaHombresPrincipal-item {
+    width: 25%;
+    height: 400px;
+  }
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  article .ropaHombresPrincipal .content .ropaHombresPrincipal-item {
+    width: 100%;
+  }
+}
+
+article .ropaHombresPrincipal .content .ropaHombresPrincipal-item .ropaHombresPrincipal-item-top {
+  width: 100%;
+  height: 30px;
+  background: #fbbc05;
+  color: #fff;
+  font-family: "Concert One", cursive;
+  text-shadow: 1px 1px 1px #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article .ropaHombresPrincipal .content .ropaHombresPrincipal-item .ropaHombresPrincipal-item-bottom {
+  width: 100%;
+  height: 50px;
+  background: rgba(251, 188, 5, 0.9);
+  font-family: "Crimson Text", serif;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  top: 270px;
+  -webkit-transition: -webkit-transform .7s;
+  transition: -webkit-transform .7s;
+  transition: transform .7s;
+  transition: transform .7s, -webkit-transform .7s;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .ropaHombresPrincipal .content .ropaHombresPrincipal-item .ropaHombresPrincipal-item-bottom {
+    top: 370px;
+  }
+}
+
+article .ropaHombresPrincipal .content .ropaHombresPrincipal-item:hover {
+  background-position-y: 30px;
+}
+
+article .ropaHombresPrincipal .content .ropaHombresPrincipal-item:hover .ropaHombresPrincipal-item-bottom {
+  -webkit-transform: translateY(-49px);
+          transform: translateY(-49px);
+}
+
+article .ropaHombresPrincipal .content .i2 {
+  background-image: url(../IMG/HOMBRES-ROPA/2.jpg);
+}
+
+article .ropaHombresPrincipal .content .i3 {
+  background-image: url(../IMG/HOMBRES-ROPA/3.jpg);
+}
+
+article .ropaHombresPrincipal .content .i4 {
+  background-image: url(../IMG/HOMBRES-ROPA/4.jpg);
+}
+
+article .ropaHombresPrincipal .content .i5 {
+  background-image: url(../IMG/HOMBRES-ROPA/5.jpg);
+}
+
+article .ropaHombresPrincipal .content .i6 {
+  background-image: url(../IMG/HOMBRES-ROPA/6.jpg);
+}
+
+article .ropaHombresPrincipal .content .i7 {
+  background-image: url(../IMG/HOMBRES-ROPA/7.jpg);
+}
+
+article .ropaHombresPrincipal .content .i8 {
+  background-image: url(../IMG/HOMBRES-ROPA/8.jpg);
+  position: relative;
+}
+
+article .ropaHombresPrincipal .content .irHombres {
+  width: 100%;
+  background: #FBBC05;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Contrail One", cursive;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+article .ropaHombresPrincipal .content .irHombres a {
+  color: #fff;
+  text-decoration: none;
+}
+
+article .ropaHombresPrincipal .content .irHombres span {
+  width: 100%;
+  position: absolute;
+  display: block;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  font-size: 1.5em;
+}
+
+article .ropaHombresPrincipal .content .irHombres:hover span {
+  -webkit-animation: moverFlecha 1.5s 1;
+          animation: moverFlecha 1.5s 1;
+}
+
+@-webkit-keyframes moverFlecha {
+  to {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+    color: #4285F4;
+  }
+  50% {
+    color: #34A853;
+  }
+}
+
+@keyframes moverFlecha {
+  to {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+    color: #4285F4;
+  }
+  50% {
+    color: #34A853;
+  }
+}
+
+article .ropaHombresPrincipal .mujer-content {
+  margin-top: 20px;
+}
+
+article .ropaHombresPrincipal .mujer-content h3 {
+  background: #EA4335;
+}
+
+article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item {
+  width: 50%;
+  height: 300px;
+  background-image: url(../IMG/MUJERES-ROPA/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: background-position-y .5s;
+  transition: background-position-y .5s;
+  overflow: hidden;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item {
+    width: 25%;
+    height: 400px;
+  }
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item {
+    width: 100%;
+  }
+}
+
+article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item .ropaMujeresPrincipal-item-top {
+  width: 100%;
+  height: 30px;
+  background: #ea4335;
+  color: #fff;
+  font-family: "Concert One", cursive;
+  text-shadow: 1px 1px 1px #111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item .ropaMujeresPrincipal-item-bottom {
+  width: 100%;
+  height: 50px;
+  background: rgba(234, 67, 53, 0.9);
+  font-family: "Crimson Text", serif;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  top: 270px;
+  -webkit-transition: -webkit-transform .7s;
+  transition: -webkit-transform .7s;
+  transition: transform .7s;
+  transition: transform .7s, -webkit-transform .7s;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item .ropaMujeresPrincipal-item-bottom {
+    top: 370px;
+  }
+}
+
+article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item:hover {
+  background-position-y: 30px;
+}
+
+article .ropaHombresPrincipal .mujer-content .ropaMujeresPrincipal-item:hover .ropaMujeresPrincipal-item-bottom {
+  -webkit-transform: translateY(-49px);
+          transform: translateY(-49px);
+}
+
+article .ropaHombresPrincipal .mujer-content .m2 {
+  background-image: url(../IMG/MUJERES-ROPA/3.jpg);
+}
+
+article .ropaHombresPrincipal .mujer-content .m3 {
+  background-image: url(../IMG/MUJERES-ROPA/4.jpg);
+}
+
+article .ropaHombresPrincipal .mujer-content .m4 {
+  background-image: url(../IMG/MUJERES-ROPA/6.png);
+}
+
+article .ropaHombresPrincipal .mujer-content .m5 {
+  background-image: url(../IMG/MUJERES-ROPA/7.jpg);
+}
+
+article .ropaHombresPrincipal .mujer-content .m6 {
+  background-image: url(../IMG/MUJERES-ROPA/8.jpg);
+}
+
+article .ropaHombresPrincipal .mujer-content .m7 {
+  background-image: url(../IMG/MUJERES-ROPA/2.jpg);
+}
+
+article .ropaHombresPrincipal .mujer-content .m8 {
+  background-image: url(../IMG/MUJERES-ROPA/5.jpg);
+}
+
+article .ropaHombresPrincipal .irMujeres {
+  width: 100%;
+  background: #EA4335;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Contrail One", cursive;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+article .ropaHombresPrincipal .irMujeres a {
+  color: #fff;
+  text-decoration: none;
+}
+
+article .ropaHombresPrincipal .irMujeres span {
+  width: 100%;
+  position: absolute;
+  display: block;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  font-size: 1.5em;
+}
+
+article .ropaHombresPrincipal .irMujeres:hover span {
+  -webkit-animation: moverFlecha 1.5s 1;
+          animation: moverFlecha 1.5s 1;
+}
+
+@keyframes moverFlecha {
+  to {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+    color: #fff;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+article .nuestrasMarcas {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 60px;
+  position: absolute;
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent {
+  width: 90%;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .nuestrasMarcas .nuestrasMarcasContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  article .nuestrasMarcas .nuestrasMarcasContent h2 {
+    width: 100%;
+  }
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent h2 {
+  color: #fff;
+  text-align: center;
+  background: #4285F4;
+  font-family: "Contrail One", cursive;
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem {
+  background-image: url(../IMG/NUESTRAS-MARCAS/vans-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: background-image .3s;
+  transition: background-image .3s;
+  border-bottom: 10px solid #4285F4;
+  border-top: 10px solid #4285F4;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1280px) and (max-width: 2000px) {
+  article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem {
+    height: 400px;
+    width: 50%;
+  }
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem .imgUp {
+  width: 100%;
+  height: 100%;
+  background-image: url(../IMG/NUESTRAS-MARCAS/vans-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem h3 {
+  background: rgba(66, 133, 244, 0.8);
+  width: 40%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem:hover .imgUp {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nuestrasMarcasItem:hover h3 {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .puma {
+  background-image: url(../IMG/NUESTRAS-MARCAS/puma-1.jpg);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .puma .imgUp {
+  background-image: url(../IMG/NUESTRAS-MARCAS/puma-2.jpg);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .adidas {
+  background-image: url(../IMG/NUESTRAS-MARCAS/adidas-1.jpg);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .adidas .imgUp {
+  background-image: url(../IMG/NUESTRAS-MARCAS/adidas-2.jpg);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nike {
+  background-image: url(../IMG/NUESTRAS-MARCAS/nike-1.jpg);
+}
+
+article .nuestrasMarcas .nuestrasMarcasContent .nike .imgUp {
+  background-image: url(../IMG/NUESTRAS-MARCAS/nike-2.jpg);
+}
+
+article .footer {
+  width: 100%;
+  height: 200px;
+  background: #34A853;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article .footer .footerContent {
+  width: 90%;
+  height: 100%;
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+  article .footer .footerContent .social {
+    font-size: 0.8em;
+  }
+}
+
+article .footer .footerContent .social {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+article .footer .footerContent .social .socialMediaIcons {
+  width: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article .footer .footerContent .social .socialMediaIcons h3, article .footer .footerContent .social .socialMediaIcons .iconItem {
+  color: #fff;
+}
+
+article .footer .footerContent .social .socialMediaIcons .iconItem {
+  margin: 5px 0;
+}
+
+article .footer .footerContent .social .socialMediaIcons .iconItem span {
+  margin: 0 10px;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+article .footer .footerContent .social .socialMediaIcons .iconItem span:hover {
+  color: #333;
+}
+
+article .footer .footerContent .social .direction {
+  width: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+}
+
+article .footer .footerContent .social .direction p {
+  margin: 10px 0;
+}
+
+article .footer .footerContent .social .direction:hover span {
+  -webkit-animation: iconsMove 1s 1;
+          animation: iconsMove 1s 1;
+}
+
+@keyframes iconsMove {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+article .footer .footerContent .copy {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 1.2em;
+  font-family: "Contrail One", cursive;
+}
+
+article .footer .footerContent .copy .firts-name {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+article .footer .footerContent .copy:hover .firts-name {
+  color: rgba(251, 188, 5, 0.8);
+}
+
+article .footer .footerContent .copy .icon-wear {
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+article .footer .footerContent .copy:hover .icon-wear {
+  -webkit-animation: icon-wear .5s 1;
+          animation: icon-wear .5s 1;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  color: rgba(251, 188, 5, 0.8);
+}
+
+@keyframes icon-wear {
+  20% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  40% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
