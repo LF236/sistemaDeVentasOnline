@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+//Variables
+$headerHeight: 60px;
+$firstColor: #4285F4;
+$secondColor: #EA4335;
+$thirdColor: #FBBC05;
+$fourColor: #34A853;
+$firstFont: 'Contrail One', cursive;
+$secondFont: 'Crimson Text', serif;
+$thirdFont:  'Concert One', cursive;
+
+
+.openCart{
+    position: fixed;
+    top: $headerHeight;
+    //background: red;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform .5s .7s;
+    transition-delay: .7s;
+    &:hover span{
+        //transform: scale(0.9);
+        animation: iconMove 1s;
+
+        @keyframes iconMove{
+            20%{
+                transform: rotate(20deg);
+            }
+
+            40%{
+                transform: rotate(-15deg);
+            }
+
+            60%{
+                transform: rotate(10deg);
+            }
+
+            80%{
+                transform: rotate(-5deg);
+            }
+        }
+    }
+    --count-elements : '0';
+    &::after{
+        content: var(--count-elements);
+        display: block;
+        font-size: 0.5em;
+        align-self: flex-start;
+        margin: 5px 5px 0 0;
+        background-color: $secondColor;
+        padding: 5px;
+        border-radius: 100%;
+        color: #fff;
+        font-weight: 400;
+    }
+
+    span{
+        margin-left: 20px;
+        align-self: flex-end;
+        color: $fourColor;
+        
+    }
+}
+.modalCompra{
+    width: 40vw;
+    height: 90vh;
+    background: rgba($fourColor,.8);
+    position: fixed;
+    z-index: 10;
+    overflow-y: scroll;
+    top: $headerHeight;
+    transition: transform .7s;
+    transform: translateX(-100%);
+    &:first-child{
+        background: blue;
+    }
+    .modalCompra-icon{
+        background: $fourColor;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        
+        .icon-cross{
+            cursor: pointer;
+            transition: transform .4s;
+            color: #fff;
+        }
+        &:hover span{
+            transform: scale(1.5);
+        }
+    }
+    .modalCompra-item{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        //background: rgba($fourColor,.8);
+        .modalCompra-item-data{
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            h3{
+                color: #fff;
+                font-family: $firstFont;
+                font-size: 0.9em;
+                text-align: center;
+            }
+            img{
+                width: 35%;
+                height: 80%;
+            }
+        }
+
+        .modalCompra-item-buy{
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            p{
+                color: #fff;
+                font-size: 1.3em;
+                display: flex;
+                align-items: center;
+                .icon{
+                    margin: 8px;
+                    font-size: 0.7em;
+                    cursor: pointer;
+                    transition: transform .5s;
+                    &:hover{
+                        transform: scale(0.9);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.close-modal-compra{
+    transform: translateX(0);
+}
+

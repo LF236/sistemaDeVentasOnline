@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa Para Mujer</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../ICON/style.css">
+    <link rel="stylesheet" href="../CSS/ropaMujer.css">
+    <link rel="stylesheet" href="../CSS/modalCompra.css">
+    <link rel="stylesheet" href="../ICON/ICON-MODAL-COMPRA/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="icon icon-wear"></span>
+        </div>
+        <h2><a href="../index.html">La tienda que siempre haz querido</a></h2>
+        <div class="header-right">
+            <span class="icon icon-th-menu-outline icon-menu" id="menu-icon"></span>
+            <ul class="menu">
+                <li><span class="icon icon-man"></span><a href="../HTML/ropaHombre.html">Ropa de hombre</a></li>
+                <li><span class="icon icon-woman"></span><a href="#">Ropa de mujer</a></li>
+                <li><span class="icon icon-address-book"></span><a href="#">Contácto</a></li>
+            </ul>
+        </div>
+    </header>  
+
+    <!-- Boton del carrito de compras -->
+    <div class="openCart" id="openCart-open">
+        <span class="icon icon-cart"></span>
+    </div>
+    
+    <div class="modalCompra" id="modalCompra">
+        <div class="modalCompra-icon">
+            <span class="icon icon-cross" id="close-modal-compra"></span>
+        </div>
+        <!-- Aqui se imprimir los elementos al dar clic -->
+    </div>
+    <!-- Contenido principal de la pàgina demas de los botones para realizar los filtros de roapa -->
+    <article>
+        <h2>Ropa Para Mujeres</h2>
+        <div class="contenedorRopaParaMujeres">
+            <div class="contenedorRopaParaMujeres_listaElementos">
+                <p id="titulo_producto">Filtrar Productos</p>
+                <div class="content_items_listaElementos">
+                    <a href="#" class="listaElementos_item playeras" id="btnPlayeras"><p>Playeras</p></a>
+                    <a href="#" class="listaElementos_item camisas" id="btnCamisas"><p>Camisas</p></a>
+                    <a href="#" class="listaElementos_item pantalones" id="btnPantalones"><p>Pantalones</p></a>
+                    <a href="#" class="listaElementos_item sueteres" id="btnSueteres"><p>Sueteres</p></a>
+                    <a href="#" class="listaElementos_item tennis" id="btnTennis"><p>Tennis</p></a>
+                    <a href="#" class="listaElementos_item accesorios" id="btnAccesorios"><p>Accesorios</p></a>
+                </div>
+            </div>
+            <!-- Caja en donde se imprimen los elementos -->
+            <div class="contenedorRopaParaMujeres_Elementos" id="boxProductos"></div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="footerContent">
+            <div class="social">
+                <div class="socialMediaIcons">
+                    <h3>Siguenos En Nuestras Redes Sociales</h3>
+                    <div class="iconItem">
+                            <span class="icon icon-facebook"></span>
+                            <span class="icon icon-instagram"></span>
+                            <span class="icon icon-telegram"></span>
+                            <span class="icon icon-twitter"></span>
+                    </div>
+                    
+                </div>
+
+                <div class="direction">
+                    <span class="icon icon-home"></span>
+                    <p>Avila Camacho #34 Col. Centro, Xalapa Ver</p>
+                </div>
+            </div>
+
+            <div class="copy">
+                    <h2> <span class="firts-name">SNK</span> Clothes</h2>
+                    <span class="icon icon-wear"></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/filtroRopaMujeres.js"></script>
+  
+</body>
+</html>

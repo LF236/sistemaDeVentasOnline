@@ -47,6 +47,16 @@ header{
         font-size: 1.5em;
         color: #fff;
         font-family: $firstFont;
+        a{
+            text-decoration: none;
+            color: #fff;    
+            display: block;
+            transition: transform .8s;
+            &:hover{
+                transform: scale(0.95);
+            }
+            
+        }
         //Responsive para movil
         @media (min-width: 315px) and (max-width: 480px){
             font-size: 1em;
